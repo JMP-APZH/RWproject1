@@ -7,7 +7,7 @@
 // 'src/pages/HomePage/HomePage.js'         -> HomePage
 // 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
 
-import { Router, Route, Set } from '@redwoodjs/router'
+import { Router, Route, Set, Private } from '@redwoodjs/router'
 
 import Contact2sLayout from 'src/layouts/Contact2sLayout'
 
@@ -15,12 +15,26 @@ import ContactsLayout from 'src/layouts/ContactsLayout'
 
 import PostsLayout from 'src/layouts/PostsLayout'
 import BlogLayout from './layouts/BlogLayout/BlogLayout'
+import Contact2Page from './pages/Contact2Page/Contact2Page'
 
 
 const Routes = () => {
   return (
     <Router>
       
+            
+      <Route path="/login" page={LoginPage} name="login" />
+      
+            
+      <Route path="/signup" page={SignupPage} name="signup" />
+      
+            
+      <Route path="/forgot-password" page={ForgotPasswordPage} name="forgotPassword" />
+      
+            
+      <Route path="/reset-password" page={ResetPasswordPage} name="resetPassword" />
+      
+            
       <Set wrap={Contact2sLayout}>
       
         <Route path="/contact2s/new" page={Contact2NewContact2Page} name="newContact2" />
@@ -33,15 +47,18 @@ const Routes = () => {
       
       </Set>
       
-      <Set wrap={PostsLayout}>
-        <Route path="/posts/new" page={PostNewPostPage} name="newPost" />
-        <Route path="/posts/{id:Int}/edit" page={PostEditPostPage} name="editPost" />
-        <Route path="/posts/{id:Int}" page={PostPostPage} name="post" />
-        <Route path="/posts" page={PostPostsPage} name="posts" />
-      </Set>
+      <Private unauthenticated="home">
+        <Set wrap={PostsLayout}>
+          <Route path="/admin/posts/new" page={PostNewPostPage} name="newPost" />
+          <Route path="/admin/posts/{id:Int}/edit" page={PostEditPostPage} name="editPost" />
+          <Route path="/admin/posts/{id:Int}" page={PostPostPage} name="post" />
+          <Route path="/admin/posts" page={PostPostsPage} name="posts" />
+        </Set>
+      </Private>
 
       <Set wrap={BlogLayout}>
         <Route path="/contact" page={ContactPage} name="contact" />
+        <Route path="/contact2" page={Contact2Page} name="contact2" />
         <Route path="/article/{id:Int}" page={ArticlePage} name="article" />
         <Route path="/about" page={AboutPage} name="about" />
         <Route path="/home" page={HomePage} name="home" />

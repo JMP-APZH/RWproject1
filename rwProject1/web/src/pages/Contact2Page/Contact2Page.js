@@ -12,7 +12,7 @@ const CREATE_CONTACT = gql`
   }
 `
 
-const ContactPage = () => {
+const Contact2Page = () => {
 
   const formMethods = useForm({ mode: 'onBlur' })
 
@@ -31,7 +31,7 @@ const ContactPage = () => {
 
   return (
     <>
-      <MetaTags title="Contact" description="Contact page" />
+      <MetaTags title="Contact2" description="Contact2 page" />
 
       <Toaster />
 
@@ -82,4 +82,4 @@ const ContactPage = () => {
   )
 }
 
-export default ContactPage
+export default Contact2Page

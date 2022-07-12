@@ -1,4 +1,5 @@
 import { db } from 'src/lib/db'
+import { validate } from '@redwoodjs/api'
 
 export const contact2S = () => {
   return db.contact2.findMany()
@@ -11,6 +12,7 @@ export const contact2 = ({ id }) => {
 }
 
 export const createContact2 = ({ input }) => {
+  validate(input.email, 'email', { email: true })
   return db.contact2.create({
     data: input,
   })
