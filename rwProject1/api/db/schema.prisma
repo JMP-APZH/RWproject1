@@ -13,8 +13,17 @@ generator client {
 // TODO: Please remove the following example:
 
 model Post {
-  id    Int     @id @default(autoincrement())
-  title String
-  body  String
+  id        Int      @id @default(autoincrement())
+  title     String
+  body      String
   createdAt DateTime @default(now())
+}
+
+model Contact2 {
+  id       Int      @id @default(autoincrement())
+  name     String
+  email    String
+  message  String
+  createdAt DateTime @default(now())
+
 }

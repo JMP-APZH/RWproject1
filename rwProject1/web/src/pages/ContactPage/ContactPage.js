@@ -1,10 +1,23 @@
 import { FieldError, Form, Label, Submit, TextAreaField, TextField } from '@redwoodjs/forms'
 import { Link, routes } from '@redwoodjs/router'
-import { MetaTags } from '@redwoodjs/web'
+import { MetaTags, useMutation } from '@redwoodjs/web'
+
+const CREATE_CONTACT = gql`
+  mutation CreateContact2Mutation($input: CreateContact2Input!) {
+    createContact2(input: $input) {
+      id
+      
+    }
+  }
+`
 
 const ContactPage = () => {
 
+  const [create, { loading, error }] = useMutation(CREATE_CONTACT)
+
   const onSubmit = (data) => {
+    
+    create({ variables: { input: data }})
     console.log(data)
   }
 
@@ -12,7 +25,11 @@ const ContactPage = () => {
     <>
       <MetaTags title="Contact" description="Contact page" />
 
-      <Form onSubmit={onSubmit}>
+      <Form 
+        onSubmit={onSubmit} 
+        config={{ mode: 'onBlur' }}
+        error={ error }
+      >
         <Label 
           name="name" 
           errorClassName='error' 
