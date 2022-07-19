@@ -1,5 +1,5 @@
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -39,9 +39,9 @@ model User {
   createdAt           DateTime  @default(now())
 }
 
-model UserProfile {
-  id        Int      @id @default(autoincrement())
-  usercity      String[] @default(["Sainte-Luce", "Rivière-Salée", "Fort-de-France"])
-  gender    String[] @default(["Male", "Female", "Other"])
-  createdAt DateTime @default(now())
-}
+// model UserProfile {
+//   id        Int      @id @default(autoincrement())
+//   usercity      String[] @default(["Sainte-Luce", "Rivière-Salée", "Fort-de-France"])
+//   gender    String[] @default(["Male", "Female", "Other"])
+//   createdAt DateTime @default(now())
+// }
