@@ -20,10 +20,10 @@ model Post {
 }
 
 model Contact2 {
-  id       Int      @id @default(autoincrement())
-  name     String
-  email    String
-  message  String
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String
+  message   String
   createdAt DateTime @default(now())
 
 }
@@ -36,4 +36,12 @@ model User {
   salt                String
   resetToken          String?
   resetTokenExpiresAt DateTime?
+  createdAt           DateTime  @default(now())
+}
+
+model UserProfile {
+  id        Int      @id @default(autoincrement())
+  usercity      String[] @default(["Sainte-Luce", "Rivière-Salée", "Fort-de-France"])
+  gender    String[] @default(["Male", "Female", "Other"])
+  createdAt DateTime @default(now())
 }

@@ -21,32 +21,20 @@ import Contact2Page from './pages/Contact2Page/Contact2Page'
 const Routes = () => {
   return (
     <Router>
-      
-            
       <Route path="/login" page={LoginPage} name="login" />
-      
-            
       <Route path="/signup" page={SignupPage} name="signup" />
-      
-            
       <Route path="/forgot-password" page={ForgotPasswordPage} name="forgotPassword" />
-      
-            
       <Route path="/reset-password" page={ResetPasswordPage} name="resetPassword" />
-      
-            
+
+
       <Set wrap={Contact2sLayout}>
-      
         <Route path="/contact2s/new" page={Contact2NewContact2Page} name="newContact2" />
-      
         <Route path="/contact2s/{id:Int}/edit" page={Contact2EditContact2Page} name="editContact2" />
-      
         <Route path="/contact2s/{id:Int}" page={Contact2Contact2Page} name="contact2" />
-      
         <Route path="/contact2s" page={Contact2Contact2sPage} name="contact2S" />
-      
+
       </Set>
-      
+
       <Private unauthenticated="home">
         <Set wrap={PostsLayout}>
           <Route path="/admin/posts/new" page={PostNewPostPage} name="newPost" />
