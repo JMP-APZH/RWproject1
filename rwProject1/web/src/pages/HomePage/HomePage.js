@@ -8,7 +8,10 @@ const HomePage = () => {
     <>
       <MetaTags title="Home" description="Home page" />
 
-      Home
+      <h1 className="text-white text-center text-2xl font-semibold tracking-tight bg-gray-500 rounded-xl">
+        Blogs Articles Overview
+      </h1>
+
 
       <ArticlesCell />
 
