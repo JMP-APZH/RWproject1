@@ -11,15 +11,20 @@ const BlogLayout = ({ children }) => {
 
         <h1 className="text-5xl font-semibold tracking-tight">
             <Link
-              className="text-blue-400 hover:text-blue-100 transition duration-100"
+              className="text-blue-400 hover:text-blue-100 hover:tracking-widest transition duration-100"
               to={routes.home()}>Redwood Blog</Link>
-          </h1>
+        </h1>
+
+        <div className="absolute bottom-2 left-0 ml-9 text-xs text-blue-400 underline decoration-1">
+              By JMP
+        </div>
 
         <nav>
           <ul className="relative flex items-center font-light">
             <li>
               <Link
-                className="text-blue-400 hover:text-blue-100 transition duration-100"
+                id='home'
+                className="text-blue-400 hover:text-blue-100 transition duration-100 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 target:text-purple-600"
                 to={routes.home()}
               >
                 Home
@@ -27,7 +32,8 @@ const BlogLayout = ({ children }) => {
             </li>
             <li>
               <Link
-                className="py-2 px-4 hover:bg-blue-600 transition duration-100 rounded"
+                id='about'
+                className="py-2 px-4 hover:bg-blue-600 transition duration-100 rounded focus:outline-none focus:ring focus:ring-violet-300 target:text-purple-600"
                 to={routes.about()}
               >
                 About
@@ -55,7 +61,7 @@ const BlogLayout = ({ children }) => {
             <li>
             {isAuthenticated ? (
                 <div>
-                  <button className="py-2 px-4" type="button" onClick={logOut}>
+                  <button className="py-2 px-4 hover:bg-blue-600 transition duration-100 rounded" type="button" onClick={logOut}>
                         Logout
                   </button>
                 </div>
@@ -68,14 +74,14 @@ const BlogLayout = ({ children }) => {
           </ul>
 
           {isAuthenticated && (
-            <div className="absolute bottom-1 right-0 mr-12 text-xs text-blue-300">
+            <div className="absolute bottom-1 right-0 mr-16 text-xs text-blue-300">
               Logged in as {currentUser.email}
             </div>
           )}
         </nav>
 
       </header>
-      <main className="max-w-4xl mx-auto p-12 bg-gray-200 shadow-2xl shadow-blue-500/50 rounded-b">
+      <main className="mt-4 max-w-4xl mx-auto p-6 bg-gray-200 shadow-2xl shadow-blue-500/50 rounded-b">
         {children}
       </main>
     </>

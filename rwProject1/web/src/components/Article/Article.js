@@ -15,8 +15,11 @@ const Article = ({ article }) => {
 
       </header>
 
-      <div className="mt-2 text-xl text-gray-900 font-light">{article.body}</div>
-        <div>
+      <div className="mt-2 text-xl text-gray-900 font-light"
+      >
+        {article.body}
+      </div>
+        <div className="text-xs">
           Posted at: {article.createdAt}
         </div>
     </article>
