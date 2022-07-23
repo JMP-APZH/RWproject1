@@ -22,16 +22,16 @@ export const Failure = ({ error }) => (
 export const Success = ({ article }) => {
   return (
   <ul>
-  
-    <li key={article.id}>{JSON.stringify(article)}</li>
-  
 
-  
+    {/* <li key={article.id}>{JSON.stringify(article)}</li> */}
+
+
+
     <Article article={ article } />
 
-  
-  
+
+
 </ul>
   )
-  
+
 }

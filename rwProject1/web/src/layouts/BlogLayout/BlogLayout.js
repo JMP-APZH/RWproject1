@@ -23,8 +23,7 @@ const BlogLayout = ({ children }) => {
           <ul className="relative flex items-center font-light">
             <li>
               <Link
-                id='home'
-                className="text-blue-400 hover:text-blue-100 transition duration-100 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 target:text-purple-600"
+                className="text-blue-400 hover:text-blue-100 transition duration-100 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300"
                 to={routes.home()}
               >
                 Home
@@ -32,8 +31,7 @@ const BlogLayout = ({ children }) => {
             </li>
             <li>
               <Link
-                id='about'
-                className="py-2 px-4 hover:bg-blue-600 transition duration-100 rounded focus:outline-none focus:ring focus:ring-violet-300 target:text-purple-600"
+                className="py-2 px-4 hover:bg-blue-600 transition duration-100 rounded focus:outline-none focus:ring focus:ring-violet-300"
                 to={routes.about()}
               >
                 About
@@ -49,7 +47,7 @@ const BlogLayout = ({ children }) => {
             </li>
             <li>
               <Link
-                className="py-2 px-4 hover:bg-blue-600 transition duration-100 rounded"
+                className="text-black py-2 px-4 hover:bg-blue-600 transition duration-100 rounded"
                 to={routes.contact2()}
               >
                 Contact2

@@ -22,14 +22,15 @@ export const Failure = ({ error }) => (
 
 export const Success = ({ articles }) => {
   return (
+    <>
     <ul className="flex flex-col items-center">
       <div className="space-y-10">
         {articles.map((article) => (
-          <Article key={ article.id } article={ article } />
+          <Article key={article.id} article={article} />
 
         ))}
       </div>
-
     </ul>
+    </>
   )
 }

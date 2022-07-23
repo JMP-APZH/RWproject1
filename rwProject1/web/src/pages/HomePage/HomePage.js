@@ -9,7 +9,7 @@ const HomePage = () => {
       <MetaTags title="Home" description="Home page" />
 
       <div className="">
-        <h1 className="text-white text-center text-2xl font-semibold tracking-tight bg-gray-500 rounded-xl">
+        <h1 className="text-white text-center text-2xl font-semibold tracking-tight bg-gray-500 rounded-xl pb-1">
           Blog Articles Overview
         </h1>
 
