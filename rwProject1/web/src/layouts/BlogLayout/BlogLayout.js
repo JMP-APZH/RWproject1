@@ -15,7 +15,7 @@ const BlogLayout = ({ children }) => {
               to={routes.home()}>Redwood Blog</Link>
         </h1>
 
-        <div className="absolute bottom-2 left-0 ml-9 text-xs text-blue-400 underline decoration-1">
+        <div className="absolute bottom-2 left-0 ml-9 text-xs text-blue-400">
               By JMP
         </div>
 
@@ -23,7 +23,7 @@ const BlogLayout = ({ children }) => {
           <ul className="relative flex items-center font-light">
             <li>
               <Link
-                className="text-blue-400 hover:text-blue-100 transition duration-100 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300"
+                className="py-2 px-4 font-semibold text-blue-400 hover:bg-blue-600 hover:text-yellow-500 transition duration-100 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300"
                 to={routes.home()}
               >
                 Home
@@ -31,7 +31,7 @@ const BlogLayout = ({ children }) => {
             </li>
             <li>
               <Link
-                className="py-2 px-4 hover:bg-blue-600 transition duration-100 rounded focus:outline-none focus:ring focus:ring-violet-300"
+                className="py-2 px-4 font-semibold hover:bg-blue-600 hover:text-yellow-500 transition duration-100 rounded focus:outline-none focus:ring focus:ring-violet-300"
                 to={routes.about()}
               >
                 About
@@ -39,7 +39,7 @@ const BlogLayout = ({ children }) => {
             </li>
             <li>
               <Link
-                className="py-2 px-4 hover:bg-blue-600 transition duration-100 rounded"
+                className="py-2 px-4 font-semibold hover:bg-blue-600 hover:text-yellow-500 transition duration-100 rounded"
                 to={routes.contact()}
               >
                 Contact
@@ -47,7 +47,7 @@ const BlogLayout = ({ children }) => {
             </li>
             <li>
               <Link
-                className="text-black py-2 px-4 hover:bg-blue-600 transition duration-100 rounded"
+                className="text-black font-semibold py-2 px-4 hover:bg-blue-600 hover:text-yellow-500 transition duration-100 rounded"
                 to={routes.contact2()}
               >
                 Contact2
@@ -59,12 +59,12 @@ const BlogLayout = ({ children }) => {
             <li>
             {isAuthenticated ? (
                 <div>
-                  <button className="py-2 px-4 hover:bg-blue-600 transition duration-100 rounded" type="button" onClick={logOut}>
+                  <button className="py-2 px-4 font-semibold hover:text-yellow-500 hover:bg-blue-600 transition duration-100 rounded" type="button" onClick={logOut}>
                         Logout
                   </button>
                 </div>
               ) : (
-                <Link to={routes.login()} className="py-2 px-4">
+                <Link to={routes.login()} className="py-2 px-4 font-semibold">
                   Login
                 </Link>
               )}
