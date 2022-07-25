@@ -1,7 +1,6 @@
 [build]
 command = "yarn rw deploy netlify"
 publish = "web/dist"
-  # publish = "web/src"
 functions = "api/dist/functions"
 
 [dev]
@@ -18,5 +17,5 @@ functions = "api/dist/functions"
 
 [[redirects]]
   from = "/*"
-  to = "/200.html"
+  to = "/index.html"
   status = 200
