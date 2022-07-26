@@ -20,18 +20,27 @@ export const Failure = ({ error }) => (
 )
 
 export const Success = ({ article }) => {
-  return (
-  <ul>
+//   return (
+//   <ul>
 
-    {/* <li key={article.id}>{JSON.stringify(article)}</li> */}
-
-
-
-    <Article article={ article } />
+//     {/* <li key={article.id}>{JSON.stringify(article)}</li> */}
 
 
 
-</ul>
-  )
+//     <Article article={ article } />
+
+
+
+// </ul>
+//   )
+
+
+return (
+  <div className="space-y-10">
+    {articles.map((article) => (
+      <Article article={article} key={article.id} summary={true} />
+    ))}
+  </div>
+)
 
 }
