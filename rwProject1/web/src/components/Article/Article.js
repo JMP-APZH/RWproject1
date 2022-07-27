@@ -15,7 +15,7 @@ const Article = ({ article, summary = false }) => {
 
       <div className="mt-2 text-xl text-gray-900 font-light">
         {/* {article.body} */}
-        {summary ? truncate(article.body, 100) : article.body}
+        {summary ? truncate(article.body, 50) : article.body}
       </div>
       <div className="text-xs">Posted at: {article.createdAt}</div>
     </article>
