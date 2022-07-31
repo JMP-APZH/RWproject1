@@ -1,4 +1,5 @@
 import { Link, routes } from '@redwoodjs/router'
+import CommentsCell from 'src/components/CommentsCell'
 
 const truncate = (text, length) => {
   return text.substring(0, length) + '...'
@@ -18,6 +19,11 @@ const Article = ({ article, summary = false }) => {
         {summary ? truncate(article.body, 50) : article.body}
       </div>
       <div className="text-xs">Posted at: {article.createdAt}</div>
+      {!summary && (
+        <div className="mt-12">
+          <CommentsCell />
+        </div>
+      )}
     </article>
   )
 }
