@@ -28,3 +28,10 @@ export const deletePost = ({ id }) => {
     where: { id },
   })
 }
+
+export const postCount = ({ id }) => {
+  return db.post.count({
+    where: { id },
+  })
+}
+

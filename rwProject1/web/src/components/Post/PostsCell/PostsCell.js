@@ -10,6 +10,9 @@ export const QUERY = gql`
       body
       createdAt
     }
+    postCount {
+      postId
+    }
   }
 `
 
@@ -31,5 +34,11 @@ export const Failure = ({ error }) => (
 )
 
 export const Success = ({ posts }) => {
-  return <Posts posts={posts} />
+  return (
+    <div>
+      <Posts posts={posts} />
+      <postCount postCount={postCount} />
+    </div>
+  )
+
 }

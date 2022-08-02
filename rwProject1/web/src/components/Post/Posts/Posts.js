@@ -76,6 +76,9 @@ const PostsList = ({ posts }) => {
 
   return (
     <div className="rw-segment rw-table-wrapper-responsive">
+      <div>
+        {postCount}
+    </div>
       <table className="rw-table">
         <thead>
           <tr>
