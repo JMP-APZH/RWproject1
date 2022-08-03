@@ -10,9 +10,7 @@ export const QUERY = gql`
       body
       createdAt
     }
-    postCount {
-      postId
-    }
+    postCount
   }
 `
 
@@ -33,11 +31,13 @@ export const Failure = ({ error }) => (
   <div className="rw-cell-error">{error.message}</div>
 )
 
-export const Success = ({ posts }) => {
+export const Success = ({ posts, postCount }) => {
+  console.log('hello')
   return (
     <div>
-      <Posts posts={posts} />
-      <postCount postCount={postCount} />
+      <Posts posts={posts} postCount={postCount} />
+      {/* <postCount postCount={postCount} /> */}
+      {postCount}
     </div>
   )
 

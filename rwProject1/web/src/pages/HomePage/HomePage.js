@@ -16,7 +16,15 @@ const HomePage = () => {
 
 
         <ArticlesCell />
+
+      <div className="py-8">
+          Where the Stats output will be displayed...
+
+          
       </div>
+
+      </div>
+
     </>
   )
 }
