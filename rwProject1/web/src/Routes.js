@@ -15,12 +15,14 @@ import ContactsLayout from 'src/layouts/ContactsLayout'
 
 import PostsLayout from 'src/layouts/PostsLayout'
 import BlogLayout from './layouts/BlogLayout/BlogLayout'
+import CommentLayout from './layouts/CommentLayout/CommentLayout'
 import Contact2Page from './pages/Contact2Page/Contact2Page'
 
 
 const Routes = () => {
   return (
     <Router>
+      <Route path="/comment" page={CommentPage} name="comment" />
       <Route path="/login" page={LoginPage} name="login" />
       <Route path="/signup" page={SignupPage} name="signup" />
       <Route path="/forgot-password" page={ForgotPasswordPage} name="forgotPassword" />
@@ -41,6 +43,13 @@ const Routes = () => {
           <Route path="/admin/posts/{id:Int}/edit" page={PostEditPostPage} name="editPost" />
           <Route path="/admin/posts/{id:Int}" page={PostPostPage} name="post" />
           <Route path="/admin/posts" page={PostPostsPage} name="posts" />
+        </Set>
+
+        <Set wrap={CommentLayout}>
+          <Route path="/admin/comments/new" page={CommentPageNewCommentPage} name="newComment" />
+          <Route path="/admin/comments/{id:Int}/edit" page={PostEditPostPage} name="editComment" />
+          <Route path="/admin/comments/{id:Int}" page={PostPostPage} name="comment" />
+          <Route path="/admin/comments" page={PostPostsPage} name="comments" />
         </Set>
       </Private>
 
