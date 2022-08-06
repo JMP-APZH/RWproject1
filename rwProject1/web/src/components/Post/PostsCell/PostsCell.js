@@ -35,8 +35,8 @@ export const Success = ({ posts, postCount }) => {
   console.log('hello from the PostsCell')
   console.log({postCount})
   return (
-    <div>
-      {/* <Posts posts={posts} postCount={postCount} /> */}
+    <div className=''>
+      <Posts posts={posts} postCount={postCount} />
       <postCount postCount={postCount} />
       Post # are showned here: {postCount}
     </div>

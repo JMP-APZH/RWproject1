@@ -16,6 +16,7 @@ import ContactsLayout from 'src/layouts/ContactsLayout'
 import PostsLayout from 'src/layouts/PostsLayout'
 import BlogLayout from './layouts/BlogLayout/BlogLayout'
 import CommentLayout from './layouts/CommentLayout/CommentLayout'
+import CommentsPage from './pages/CommentPage/CommentsPage/CommentsPage'
 import Contact2Page from './pages/Contact2Page/Contact2Page'
 
 
@@ -49,7 +50,7 @@ const Routes = () => {
           <Route path="/admin/comments/new" page={CommentPageNewCommentPage} name="newComment" />
           <Route path="/admin/comments/{id:Int}/edit" page={PostEditPostPage} name="editComment" />
           <Route path="/admin/comments/{id:Int}" page={PostPostPage} name="comment" />
-          <Route path="/admin/comments" page={PostPostsPage} name="comments" />
+          <Route path="/admin/comments" page={CommentsPage} name="comments" />
         </Set>
       </Private>
 

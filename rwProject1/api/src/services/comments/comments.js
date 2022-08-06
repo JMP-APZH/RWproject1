@@ -26,3 +26,7 @@ export const deleteComment = ({ id }) => {
     where: { id },
   })
 }
+
+export const commentCount = () => {
+  return db.comment.count()
+}

@@ -8,6 +8,7 @@ export const QUERY = gql`
       body
       createdAt
     }
+    commentCount
   }
 `
 
@@ -21,13 +22,18 @@ export const Failure = ({ error }) => (
   <div style={{ color: 'red' }}>Error: {error.message}</div>
 )
 
-export const Success = ({ comments }) => {
+export const Success = ({ comments, commentCount }) => {
+  console.log('hello from the CommentsCell')
+  console.log({commentCount})
   return (
     <>
       <div className="space-y-8">
         {comments.map((comment) => (
           <Comment key={comment.id} comment={comment} />
         ))}
+
+        <Comment commentCount={commentCount} />
+        {commentCount}
       </div>
     </>
   )
