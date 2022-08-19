@@ -1,4 +1,4 @@
-import CommentsCell from 'src/components/CommentsCell'
+import CommentsCell from 'src/components/Comment/CommentsCell'
 
 const CommentsPage = () => {
   return <CommentsCell />

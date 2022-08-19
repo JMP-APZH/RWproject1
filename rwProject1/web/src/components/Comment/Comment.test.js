@@ -14,7 +14,7 @@
 // })
 
 
-import { render } from '@redwoodjs/testing/web'
+import { render, screen } from '@redwoodjs/testing/web'
 
 import Comment from './Comment'
 

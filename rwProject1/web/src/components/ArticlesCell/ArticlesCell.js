@@ -9,6 +9,7 @@ export const QUERY = gql`
       body
       createdAt
     }
+    postCount
   }
 `
 
@@ -20,16 +21,21 @@ export const Failure = ({ error }) => (
   <div style={{ color: 'red' }}>Error: {error.message}</div>
 )
 
-export const Success = ({ articles }) => {
+export const Success = ({ articles, postCount }) => {
   return (
     <>
-    {/* <ul className="flex flex-col items-center"> */}
-      <div className="space-y-10">
-        {articles.map((article) => (
-          <Article article={article} key={article.id} summary={true} />
-        ))}
-      </div>
-    {/* </ul> */}
+    <p className="text-blue-500 pt-5 text-center font-bold text-xl">
+      Hello From the ArticlesCell {postCount} (postCount from the ArticlesCell)
+    </p>
+    <div className="border border-blue-500 p-2">
+      {/* <ul className="flex flex-col items-center"> */}
+        <div className="space-y-10">
+          {articles.map((article) => (
+            <Article article={article} key={article.id} summary={true} />
+          ))}
+        </div>
+      {/* </ul> */}
+    </div>
     </>
   )
 }

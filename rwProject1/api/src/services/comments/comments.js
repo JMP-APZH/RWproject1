@@ -1,8 +1,12 @@
 import { db } from 'src/lib/db'
 
-export const comments = () => {
-  return db.comment.findMany()
+export const comments = ({ postId }) => {
+  return db.comment.findMany({ where: { postId } })
 }
+
+// export const comments = () => {
+//   return db.comment.findMany()
+// }
 
 export const comment = ({ id }) => {
   return db.comment.findUnique({
@@ -29,4 +33,8 @@ export const deleteComment = ({ id }) => {
 
 export const commentCount = () => {
   return db.comment.count()
+}
+
+export const commentperpostCount = ({ postId }) => {
+  return db.comment.count({ where: { postId } })
 }

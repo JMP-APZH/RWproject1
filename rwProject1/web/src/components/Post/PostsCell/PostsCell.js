@@ -35,11 +35,23 @@ export const Success = ({ posts, postCount }) => {
   console.log('hello from the PostsCell')
   console.log({postCount})
   return (
-    <div className=''>
-      <Posts posts={posts} postCount={postCount} />
-      <postCount postCount={postCount} />
-      Post # are showned here: {postCount}
+    <>
+    <p className="pt-5 font-bold text-center text-2xl text-green-800">
+      Hello from the PostsCell
+    </p>
+    <p className="italic text-center text-xl text-green-800">
+    I am showing here the list of posts as in the DB
+    </p>
+    <div className='border border-green-800 p-2'>
+      <Posts
+        posts={posts}
+        // postCount={postCount}
+      />
+      <p className="py-5 font-bold text-xl">
+        Posts count is showned here: {postCount}
+      </p>
     </div>
+    </>
   )
 
 }
