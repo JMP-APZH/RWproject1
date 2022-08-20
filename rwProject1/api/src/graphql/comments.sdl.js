@@ -12,6 +12,7 @@ export const schema = gql`
     comments(postId: Int!): [Comment!]! @skipAuth
     comments2: [Comment!]! @skipAuth
     commentCount: Int! @skipAuth
+    commentperpostCount(postId: Int!): Int! @skipAuth
   }
 
   input CreateCommentInput {

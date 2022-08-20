@@ -11,6 +11,7 @@ export const QUERY = gql`
       createdAt
     }
     commentCount
+    commentperpostCount(postId: $postId)
   }
 `
 
@@ -37,7 +38,7 @@ export const Failure = ({ error }) => (
   <div style={{ color: 'red' }}>Error: {error.message}</div>
 )
 
-export const Success = ({ comments, commentCount }) => {
+export const Success = ({ comments, commentCount, commentperpostCount }) => {
   console.log('hello from the CommentsCell')
   console.log({commentCount})
   return (
@@ -54,6 +55,12 @@ export const Success = ({ comments, commentCount }) => {
         This is the total of comments but not the amount of comment for that particular post
         <br />
         {commentCount}
+        </p>
+        <br />
+        <p className="text-purple-500 font-bold">
+        This should be the total of comments for that particular post
+        <br />
+        {commentperpostCount}
         </p>
 
       </div>

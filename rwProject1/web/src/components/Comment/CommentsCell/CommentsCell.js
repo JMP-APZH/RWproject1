@@ -70,7 +70,7 @@ export const Success = ({ comments2, commentCount }) => {
         commentCount={commentCount}
       />
       <p className="py-5 font-bold text-xl">
-        Comments count is showned here: {commentCount}
+        The Total Comments count is showned here: {commentCount}
       </p>
     </div>
     </>
