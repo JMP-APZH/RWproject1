@@ -58,7 +58,7 @@ export const Failure = ({ error }) => (
   <div className="rw-cell-error">{error.message}</div>
 )
 
-export const Success = ({ comments, commentCount }) => {
+export const Success = ({ comments2, commentCount }) => {
   return (
     <>
     <p className="text-red-800 pt-5 text-center font-bold text-2xl">
@@ -66,7 +66,7 @@ export const Success = ({ comments, commentCount }) => {
     </p>
     <div className="border border-red-800 p-2">
       <Comments
-        comments={comments}
+        comments={comments2}
         commentCount={commentCount}
       />
       <p className="py-5 font-bold text-xl">

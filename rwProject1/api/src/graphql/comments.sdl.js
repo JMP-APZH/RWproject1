@@ -10,7 +10,7 @@ export const schema = gql`
 
   type Query {
     comments(postId: Int!): [Comment!]! @skipAuth
-    comments: [Comment!]! @skipAuth
+    comments2: [Comment!]! @skipAuth
     commentCount: Int! @skipAuth
   }
 

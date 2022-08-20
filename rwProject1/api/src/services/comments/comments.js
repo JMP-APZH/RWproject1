@@ -4,9 +4,9 @@ export const comments = ({ postId }) => {
   return db.comment.findMany({ where: { postId } })
 }
 
-// export const comments = () => {
-//   return db.comment.findMany()
-// }
+export const comments2 = () => {
+  return db.comment.findMany()
+}
 
 export const comment = ({ id }) => {
   return db.comment.findUnique({
