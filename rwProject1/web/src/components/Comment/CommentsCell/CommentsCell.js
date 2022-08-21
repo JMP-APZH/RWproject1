@@ -65,13 +65,14 @@ export const Success = ({ comments2, commentCount }) => {
       Hello from the CommentsCell
     </p>
     <div className="border border-red-800 p-2">
+      <p className="py-5 font-bold text-xl">
+        We have currently a total of {commentCount} comments that have been created.
+      </p>
       <Comments
         comments={comments2}
         commentCount={commentCount}
       />
-      <p className="py-5 font-bold text-xl">
-        The Total Comments count is showned here: {commentCount}
-      </p>
+
     </div>
     </>
     )

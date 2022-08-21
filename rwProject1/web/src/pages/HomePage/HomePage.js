@@ -12,20 +12,31 @@ import CommentsCell from 'src/components/Comment/CommentsCell'
 
 // import { postCount } from 'rwProject1/api/src/services/posts/posts.js'
 
-export const QUERY = gql`
-  query FindPosts {
-    posts {
-      id
-      title
-      body
-      createdAt
-    }
-    postCount
-  }
-`
+// export const QUERY = gql`
+//   query FindPosts {
+//     posts {
+//       id
+//       title
+//       body
+//       createdAt
+//     }
+//     postCount
+//   }
+// `
 
 
 const HomePage = ({ posts, postCount, commentCount }) => {
+//   const QUERY = gql`
+//   query FindPosts {
+//     posts {
+//       id
+//       title
+//       body
+//       createdAt
+//     }
+//     postCount
+//   }
+// `
   console.log({postCount})
   console.log('hello from the homepage')
   console.log({commentCount})
@@ -52,9 +63,6 @@ const HomePage = ({ posts, postCount, commentCount }) => {
         <PostsCell />
         <p className="p-2 font-bold text-center text-xl">
           I expect here the list of all comments independent of the post
-        </p>
-        <p className="p-2 italic text-center text-xl">
-          Something is wrong
         </p>
         <CommentsCell />
 

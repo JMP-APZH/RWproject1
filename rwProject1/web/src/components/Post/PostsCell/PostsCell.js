@@ -36,6 +36,11 @@ export const Success = ({ posts, postCount }) => {
   console.log({postCount})
   return (
     <>
+
+        <h1 className="text-white text-center text-2xl font-semibold tracking-tight bg-gray-500 rounded-xl pb-1">
+          Blog Articles Overview { postCount } from the PostsCell
+        </h1>
+
     <p className="pt-5 font-bold text-center text-2xl text-green-800">
       Hello from the PostsCell
     </p>
@@ -43,13 +48,13 @@ export const Success = ({ posts, postCount }) => {
     I am showing here the list of posts as in the DB
     </p>
     <div className='border border-green-800 p-2'>
+      <p className="py-5 font-bold text-xl">
+        We have currently {postCount} posts that have been created.
+      </p>
       <Posts
         posts={posts}
-        // postCount={postCount}
       />
-      <p className="py-5 font-bold text-xl">
-        Posts count is showned here: {postCount}
-      </p>
+
     </div>
     </>
   )
